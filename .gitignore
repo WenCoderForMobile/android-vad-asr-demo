@@ -1,0 +1,11 @@
+/.gradle/
+/build/
+/app/build/
+/local.properties
+/.idea/
+*.iml
+.DS_Store
+
+# ASR model is ~232MB and exceeds GitHub's 100MB limit. Download it locally:
+# https://github.com/k2-fsa/sherpa-onnx/releases
+app/src/main/assets/sherpa-onnx-paraformer-zh-2023-09-14/model.int8.onnx

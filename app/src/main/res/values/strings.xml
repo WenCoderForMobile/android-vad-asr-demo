@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">语音输入 Demo</string>
+    <string name="action_start">开始语音输入</string>
+    <string name="action_stop">停止</string>
+    <string name="hint_idle">点按钮开始语音输入</string>
+    <string name="hint_recording">开始语音输入</string>
+    <string name="hint_loading">正在加载 VAD / ASR 模型…</string>
+    <string name="hint_ready">模型已就绪。点按钮开始语音输入。</string>
+    <string name="hint_empty">没有识别到文字</string>
+    <string name="status_mic_denied">需要麦克风权限才能语音输入</string>
+    <string name="status_load_failed">模型加载失败</string>
+</resources>
