@@ -6,6 +6,8 @@ This Demo is a sample for speech recognition and voice input. It follows the Vad
 
 **Keywords:** sherpa-onnx, VadAsr, VAD, ASR, Silero, Paraformer, speech-to-text, speech recognition, voice input, on-device, offline, Android, arm64-v8a, ONNX, JNI
 
+> `model.int8.onnx` under `assets/sherpa-onnx-paraformer-zh-2023-09-14` is not in this repo. Download it from [ASR (Paraformer Chinese, type = 0)](#asr-paraformer-zh) and put it in `app/src/main/assets/sherpa-onnx-paraformer-zh-2023-09-14/`.
+
 ## 1. Features
 
 - Tap **Start voice input**: request the microphone, start recording, and the button becomes **Stop**.
@@ -121,7 +123,7 @@ curl -L -O https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/si
 
 This matches `model = "silero_vad.onnx"` in `getVadModelConfig(0)`.
 
-**ASR (Paraformer Chinese, type = 0)**
+<a id="asr-paraformer-zh" href="#asr-paraformer-zh">ASR (Paraformer Chinese, type = 0)</a>
 
 `model.int8.onnx` is about 232MB and exceeds GitHub's 100MB limit, so it is not in the repo. Download it locally:
 
@@ -130,6 +132,9 @@ cd app/src/main/assets
 curl -L -O https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-paraformer-zh-2023-09-14.tar.bz2
 tar xjf sherpa-onnx-paraformer-zh-2023-09-14.tar.bz2
 rm sherpa-onnx-paraformer-zh-2023-09-14.tar.bz2
+# Keep only onnx / txt; drop README, test wavs, and empty dirs
+find sherpa-onnx-paraformer-zh-2023-09-14 -type f ! \( -name '*.onnx' -o -name '*.txt' \) -delete
+find sherpa-onnx-paraformer-zh-2023-09-14 -type d -empty -delete
 ```
 
 Final layout:

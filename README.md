@@ -6,6 +6,8 @@
 
 **关键词：** sherpa-onnx, VadAsr, VAD, ASR, Silero, Paraformer, speech-to-text, speech recognition, voice input, on-device, offline, Android, arm64-v8a, ONNX, JNI, 语音识别, 语音输入, 离线识别
 
+> `assets/sherpa-onnx-paraformer-zh-2023-09-14` 中的 `model.int8.onnx` 未上传。可参照下文 [ASR（Paraformer 中文，type = 0）](#asr-paraformer-zh) 下载，放入目录：`app/src/main/assets/sherpa-onnx-paraformer-zh-2023-09-14/`。
+
 ## 1. 主要功能
 
 - 点「开始语音输入」：申请麦克风、开始录音，按钮变为「停止」。
@@ -121,7 +123,7 @@ curl -L -O https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/si
 
 对应 `getVadModelConfig(0)` 的 `model = "silero_vad.onnx"`。
 
-**ASR（Paraformer 中文，type = 0）**
+<a id="asr-paraformer-zh" href="#asr-paraformer-zh">ASR（Paraformer 中文，type = 0）</a>
 
 `model.int8.onnx` 约 232MB，超过 GitHub 100MB 限制，不纳入仓库，请按下面步骤自行下载。
 
@@ -130,6 +132,9 @@ cd app/src/main/assets
 curl -L -O https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-paraformer-zh-2023-09-14.tar.bz2
 tar xjf sherpa-onnx-paraformer-zh-2023-09-14.tar.bz2
 rm sherpa-onnx-paraformer-zh-2023-09-14.tar.bz2
+# 压缩包里还有 README、测试 wav 等，只保留 onnx / txt
+find sherpa-onnx-paraformer-zh-2023-09-14 -type f ! \( -name '*.onnx' -o -name '*.txt' \) -delete
+find sherpa-onnx-paraformer-zh-2023-09-14 -type d -empty -delete
 ```
 
 最终目录：
