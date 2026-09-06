@@ -154,7 +154,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         synchronized(recognizedParts) { recognizedParts.clear() }
-        resultText.text = ""
         vad.reset()
         audioRecord = recorder
         isRecording = true
@@ -221,15 +220,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun printUserInput(text: String) {
+        statusText.setText(R.string.hint_ready)
         if (text.isBlank()) {
-            statusText.setText(R.string.hint_ready)
-            resultText.setText(R.string.hint_empty)
+            if (existingUserInput().isEmpty()) {
+                resultText.setText(R.string.hint_empty)
+            }
             Log.i(TAG, "用户输入: (空)")
             return
         }
-        statusText.setText(R.string.hint_ready)
-        resultText.text = text
+        val existing = existingUserInput()
+        resultText.text = if (existing.isEmpty()) text else "$existing\n$text"
         Log.i(TAG, "用户输入: $text")
+    }
+
+    private fun existingUserInput(): String {
+        val current = resultText.text?.toString().orEmpty().trim()
+        return if (current.isEmpty() || current == getString(R.string.hint_empty)) {
+            ""
+        } else {
+            current
+        }
     }
 
     private fun hasMicPermission(): Boolean {

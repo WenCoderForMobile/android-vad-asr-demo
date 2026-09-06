@@ -4,6 +4,8 @@
 
 该 Demo 是一个语音识别与输入的示例 DEMO。参照开源项目 [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) 的 VadAsr 搭建。可以运行在 Android arm64-v8a 的手机。
 
+<img src="eg.jpg" alt="程序示例" width="50%" />
+
 **关键词：** sherpa-onnx, VadAsr, VAD, ASR, Silero, Paraformer, speech-to-text, speech recognition, voice input, on-device, offline, Android, arm64-v8a, ONNX, JNI, 语音识别, 语音输入, 离线识别
 
 > `assets/sherpa-onnx-paraformer-zh-2023-09-14` 中的 `model.int8.onnx` 未上传。可参照下文 [ASR（Paraformer 中文，type = 0）](#asr-paraformer-zh) 下载，放入目录：`app/src/main/assets/sherpa-onnx-paraformer-zh-2023-09-14/`。

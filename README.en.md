@@ -4,6 +4,8 @@
 
 This Demo is a sample for speech recognition and voice input. It follows the VadAsr example from the open-source project [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx). It runs on Android arm64-v8a phones.
 
+<img src="eg.jpg" alt="App screenshot" width="50%" />
+
 **Keywords:** sherpa-onnx, VadAsr, VAD, ASR, Silero, Paraformer, speech-to-text, speech recognition, voice input, on-device, offline, Android, arm64-v8a, ONNX, JNI
 
 > `model.int8.onnx` under `assets/sherpa-onnx-paraformer-zh-2023-09-14` is not in this repo. Download it from [ASR (Paraformer Chinese, type = 0)](#asr-paraformer-zh) and put it in `app/src/main/assets/sherpa-onnx-paraformer-zh-2023-09-14/`.
